@@ -1,0 +1,10 @@
+flowchart TD
+  U[User] --> API[API Layer]
+  API --> POST[Post Service]
+  POST --> META[(Metadata DB)]
+  POST --> OBJ[(Object Storage)]
+  OBJ --> CDN[CDN]
+  API --> FEED[Feed Service]
+  FEED --> CACHE[(Feed Cache)]
+  FEED --> GRAPH[(Follow Graph)]
+  CDN --> VIEWER[Followers]

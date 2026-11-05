@@ -1,0 +1,9 @@
+flowchart TD
+  A[Sender Client] --> WS[WebSocket Gateway]
+  WS --> AUTH[Authentication]
+  AUTH --> MSG[Message Service]
+  MSG --> DB[(Message Store)]
+  MSG --> BUS[Event Bus]
+  BUS --> WS2[Recipient Gateway]
+  WS2 --> B[Recipient Client]
+  BUS --> PUSH[Push Notification Worker]

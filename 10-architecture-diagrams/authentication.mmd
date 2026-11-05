@@ -1,0 +1,12 @@
+sequenceDiagram
+  participant U as User
+  participant FE as Frontend
+  participant API as Backend
+  participant DB as Database
+  U->>FE: Submit credentials
+  FE->>API: POST /login
+  API->>DB: Find user
+  DB-->>API: User + password hash
+  API->>API: Verify password
+  API-->>FE: Session/token response
+  FE-->>U: Authenticated state

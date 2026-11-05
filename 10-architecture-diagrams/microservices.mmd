@@ -1,0 +1,11 @@
+flowchart TD
+  CLIENT[Client] --> GW[API Gateway]
+  GW --> USER[User Service]
+  GW --> ORDER[Order Service]
+  GW --> CATALOG[Catalog Service]
+  ORDER --> BUS[Message Broker]
+  BUS --> PAYMENT[Payment Service]
+  BUS --> NOTIFY[Notification Service]
+  USER --> UDB[(User DB)]
+  ORDER --> ODB[(Order DB)]
+  CATALOG --> PDB[(Catalog DB)]

@@ -1,0 +1,13 @@
+flowchart TD
+  U[User] --> FE[Frontend]
+  FE --> API[URL API]
+  API --> V[Validate URL]
+  V --> G[Generate unique code]
+  G --> DB[(Database)]
+  DB --> R[Return short URL]
+  U2[Visitor] --> RED[Redirect endpoint]
+  RED --> C[(Cache)]
+  C -->|Hit| DEST[Original URL]
+  C -->|Miss| DB
+  DB --> DEST
+  DEST --> OUT[HTTP Redirect]

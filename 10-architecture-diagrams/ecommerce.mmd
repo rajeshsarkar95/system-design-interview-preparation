@@ -1,0 +1,13 @@
+flowchart TD
+  C[Customer] --> UI[Web / Mobile App]
+  UI --> API[API Gateway]
+  API --> CAT[Catalog Service]
+  API --> CART[Cart Service]
+  API --> ORD[Order Service]
+  ORD --> INV[Inventory Service]
+  ORD --> PAY[Payment Provider]
+  ORD --> Q[Event Queue]
+  Q --> NOTIFY[Notification Worker]
+  CAT --> DB1[(Product DB)]
+  CART --> DB2[(Cart DB)]
+  ORD --> DB3[(Order DB)]
