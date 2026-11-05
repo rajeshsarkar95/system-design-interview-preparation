@@ -1,13 +1,11 @@
 // Promise.all implementation for an iterable of values/promises.
 function promiseAll(iterable) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) =>{
     const items = Array.from(iterable);
     if (items.length === 0) return resolve([]);
-
     const results = new Array(items.length);
     let completed = 0;
-
-    items.forEach((item, index) => {
+    items.forEach((item, index)=>{
       Promise.resolve(item).then(value => {
         results[index] = value;
         completed += 1;
