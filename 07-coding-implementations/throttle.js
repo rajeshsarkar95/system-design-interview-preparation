@@ -9,5 +9,4 @@ function throttle(callback, delay) {
     }
   };
 }
-
 module.exports = throttle;
